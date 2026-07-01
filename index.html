@@ -3,28 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARA MI NIÑA PRECIOSA 🌸</title>
+    <title>Nuestro Aniversario - ANGY & FRANCO</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Tipografía romántica -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #ffeef2;
+            color: #4a3b40;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d6336c;
+        }
+        h1 { font-size: 2.8rem; margin-bottom: 5px; }
+        h2 { font-size: 2.3rem; }
+        
+        /* Sección del Contador */
+        .contador-box {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(214, 51, 108, 0.15);
+            margin: 20px 0;
+        }
+        .grid-conteo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .tiempo-unidad {
+            background: #fff0f3;
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #ffccd5;
+        }
+        .numero {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d6336c;
+            display: block;
+        }
+        .etiqueta { font-size: 0.8rem; color: #777; }
+
+        /* Botón Mágico */
+        .btn-abrir {
+            background: #d6336c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(214, 51, 108, 0.3);
+            transition: 0.3s;
+            margin: 30px 0;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
+        .btn-abrir:hover {
+            background: #c2255c;
+            transform: scale(1.05);
+        }
+
+        /* El Libro de Recuerdos (Oculto al inicio) */
+        #libro-recuerdos {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        /* Páginas del Libro / Tarjetas */
+        .pagina-libro {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-left: 5px solid #d6336c;
+            text-align: left;
+            position: relative;
+        }
+        .carta-amor {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        /* Estilo Fotos Polaroid */
+        .polaroid {
+            background: white;
+            padding: 15px 15px 25px 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transform: rotate(-2deg);
+            max-width: 85%;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .polaroid:nth-child(even) {
+            transform: rotate(3deg);
+        }
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .polaroid-txt {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #4a3b40;
+        }
+
+        .decoracion-corazon {
+            font-size: 1.5rem;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            opacity: 0.3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <div class="contenedor">
-        <h1>PARA ANGY ❤️</h1>
-        <p class="subtitulo">FELIZ 1 AÑO y 6 MESES JUNTOS</p>
-        
-        <img src="https://via.placeholder.com/150" alt="Nosotros" class="foto-perfil">
 
-        <div class="tarjeta-contador">
-            <h3>Nuestro tiempo juntos:</h3>
-            <div id="contador">Cargando nuestro amor...</div>
+    <div class="container">
+        <h1>¡FELIZ ANIVERSARIO MI CIELO! ❤️</h1>
+        <p style="font-size: 1.2rem; color: #666;">ANGY & FRANCO</p>
+
+        <!-- Bloque del Contador -->
+        <div class="contador-box">
+            <span style="font-weight: 600;">El tiempo más hermoso de mi vida:</span>
+            <div class="grid-conteo">
+                <div class="tiempo-unidad"><span class="numero" id="dias">00</span><span class="etiqueta">Días</span></div>
+                <div class="tiempo-unidad"><span class="numero" id="horas">00</span><span class="etiqueta">Horas</span></div>
+                <div class="tiempo-unidad"><span class="numero" id="minutos">00</span><span class="etiqueta">Minutos</span></div>
+                <div class="tiempo-unidad"><span class="numero" id="segundos">00</span><span class="etiqueta">Segundos</span></div>
+            </div>
         </div>
 
-        <p class="dedicatoria">"MUCHCAS GRACIAS POR SIEMPRE ESTAR CONMIGO."
-            "ERES Y SIEMPRE SERAS EL REGALO MAS HERMOSO QUE TENGO 💝"</p>
-        
-        <button id="boton-sorpresa" onclick="mostrarMensaje()">¡Toca aquí, mi amor!</button>
-        <p id="mensaje-oculto" class="oculto">✨ Eres el amor de mi vida. ¡Gracias por existir! 👩‍❤️‍👨</p>
+        <!-- Botón para interactuar -->
+        <button class="btn-abrir" id="btnPrincipal" onclick="abrirElLibro()">📖 Abrir nuestro libro </button>
+
+        <!-- SECCIÓN DEL LIBRO -->
+        <div id="libro-recuerdos">
+            
+            <!-- HOJA 1: La Carta -->
+            <div class="pagina-libro">
+                <div class="decoracion-corazon">💖</div>
+                <h2>Nuestra Historia... ✨</h2>
+                <div class="carta-amor">
+                    Mi Princesa, mi vida, mi todo... 💖
+                    
+                    Hoy cumplimos un año y seis meses juntos, y ver este contador correr me hace darme cuenta de que cada segundo y momento a tu lado y ha sido el regalo más hermoso de mi vida. Me acuerdo perfectamente del día que empezamos a salir, cuando fuimos a nuestra primera cita y me enamore por completo tu mirada, de esos ojitos tan preciosos.
+                    Desde ese instante, tu sonrisa se convirtió en mi lugar favorito en el mundo.
+                    
+                    Muchas gracias por ser mi apoyo, mi compañera en todo, por dejarme estar en tu vida, por tus abrazos tan calidos que me llenan de amor y por hacerme el hombre más feliz del mundo y de cualquier otro. Sé que a veces las cosas del día a día nos cansan, pero ver tu carita al final del día hace que todo valga la pena siendo mi motivo de todos los dias.
+                    
+                    Este contador es un detalle del tiempo físico, pero lo que nosotros hemos construido no se puede medir en números. Te amo con todo mi corazoncito, hoy, mañana y siempre. ¡FELIZ ANIVERZARIO MI AMOR! 🌹✨
+                </div>
+            </div>
+
+            <!-- HOJA 2: Galería Estilo Polaroid -->
+            <div class="pagina-libro">
+                <div class="decoracion-corazon">📸</div>
+                <h2>Momentos Favoritos... 💕</h2>
+                <p style="text-align: center; color: #666;">(Aquí irán apareciendo nuestras fotoS)</p>
+
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500" alt="Recuerdo juntos">
+                    <div class="polaroid-txt">El día que todo comenzó... 👩‍❤️‍👨</div>
+                </div>
+
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500" alt="Tu Sonrisa">
+                    <div class="polaroid-txt">Tu sonrisa, mi lugar favorito 👑</div>
+                </div>
+            </div>
+
+            <!-- HOJA 3: Mensaje Final -->
+            <div class="pagina-libro" style="text-align: center;">
+                <div class="decoracion-corazon">💝</div>
+                <h2>¡Por muchos meses más! ✨</h2>
+                <p style="font-size: 1.1rem;">Este libro apenas se está escribiendo... y quiero que tenga miles de páginas más contigo. ¿Seguimos sumando momentos juntos? 🥰</p>
+                <p style="font-size: 2rem;">💍✨🐾</p>
+            </div>
+
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Script del funcionamiento -->
+    <script>
+        function abrirElLibro() {
+            var libro = document.getElementById("libro-recuerdos");
+            var boton = document.getElementById("btnPrincipal");
+            
+            if (libro.style.display === "block") {
+                libro.style.display = "none";
+                boton.innerHTML = "📖 Abrir nuestro libro de recuerdos";
+            } else {
+                libro.style.display = "block";
+                boton.innerHTML = "📕 Cerrar libro de recuerdos";
+                setTimeout(() => {
+                    libro.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+
+        // --- CONTADOR EN TIEMPO REAL ---
+        // Fecha de inicio: 4 de enero de 2025
+        const fechaInicio = new Date('January 4, 2025 00:00:00').getTime();
+
+        function actualizarContador() {
+            const ahora = new Date().getTime();
+            const diferencia = ahora - fechaInicio;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerText = minutes = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+        }
+
+        setInterval(actualizarContador, 1000);
+        actualizarContador();
+    </script>
 </body>
 </html>
