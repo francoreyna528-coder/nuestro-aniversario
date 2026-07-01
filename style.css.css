@@ -1,0 +1,93 @@
+/* Configuración para celulares */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffe5ec 0%, #ffb3c6 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.contenedor {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    max-width: 350px;
+}
+
+h1 {
+    color: #ff477e;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.subtitulo {
+    font-style: italic;
+    color: #ff7096;
+    margin-top: 0;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ff85a1;
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+.tarjeta-contador {
+    background: #fff0f3;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid #ffb3c6;
+}
+
+#contador {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ff477e;
+    line-height: 1.5;
+}
+
+.dedicatoria {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #5c5c5c;
+}
+
+#boton-sorpresa {
+    background-color: #ff477e;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
+    transition: transform 0.2s;
+}
+
+#boton-sorpresa:active {
+    transform: scale(0.95);
+}
+
+.oculto {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff1493;
+    animation: aparecer 0.5s ease-in forwards;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
