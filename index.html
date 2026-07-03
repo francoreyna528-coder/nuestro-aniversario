@@ -10,11 +10,21 @@
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #ffeef2;
+            background-image: url('fondo.jpg');
+            background-size: 120% 120%;
+            background-position: center;
+            background-attachment: fixed;
             color: #4a3b40;
             margin: 0;
             padding: 0;
             text-align: center;
+            animation: movimientoFondo 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes movimientoFondo {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
             max-width: 600px;
